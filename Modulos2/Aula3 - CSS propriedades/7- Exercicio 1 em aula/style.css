@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.card-movie {
+    background-image: url('homem-aranha-3-sem-volta-para-casa-curiosidades-material-bonus.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: 600px;
+    width: 1200px;
+
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.card-movie h2,
+h3 {
+    color: white;
+    text-align: center;
+}
