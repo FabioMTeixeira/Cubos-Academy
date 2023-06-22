@@ -1,0 +1,1 @@
+const h1Example = document.querySelector('#h1-title');
