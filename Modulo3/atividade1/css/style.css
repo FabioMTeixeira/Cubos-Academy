@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    max-width: 800px;
+    margin: 80px auto;
+
+    font-size: 14px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+}
+
+.letter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.letter-size  {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.button-red {
+    background-color: red;
+}
+
+.button-blue {
+    background-color: blue;
+}
+
+.button-purple {
+    background-color: purple;
+}
+
+.button-black {
+    background-color: black;
+}
+
+p {
+    text-align: justify;
+}
