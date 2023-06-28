@@ -1,0 +1,8 @@
+.avatar-img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    border: 2px solid aqua;
+
+    margin-top: 10px;
+}

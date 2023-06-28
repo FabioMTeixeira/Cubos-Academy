@@ -1,0 +1,39 @@
+.user-card {
+    border: 1px solid gray;
+    height: 350px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3);
+
+    margin: 10px;
+}
+
+.user-card strong {
+    margin-top: 20px;
+}
+
+.user-card span {
+    color: gray;
+    font-size: 12px;
+}
+
+.user-card button {
+    border: none;
+    background-color: aqua;
+    color: white;
+
+    width: 200px;
+    height: 48px;
+
+    margin-top: 20px;
+
+    cursor: pointer;
+}
+
+.user-card button:hover {
+    opacity: 0.5;
+}
