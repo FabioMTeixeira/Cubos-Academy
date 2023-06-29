@@ -5,4 +5,8 @@
     border: 2px solid aqua;
 
     margin-top: 10px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

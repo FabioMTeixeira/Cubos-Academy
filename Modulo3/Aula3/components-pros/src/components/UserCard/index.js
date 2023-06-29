@@ -1,12 +1,19 @@
 import './style.css';
 
-export function UserCard({ name, jobRole, children }) {
+export function UserCard({ name, jobRole, children, following }) {
     return (
         <div className='user-card'>
             {children}
             <strong>{name}</strong>
             <span>{jobRole}</span>
-            <button>Connect</button>
+            {
+                <button
+                    className={`${following ? 'following' : 'unfollowing'}`}
+                >
+                    {following ? 'Connected' : 'Connect'}
+                </button>
+            }
+
         </div>
     );
 }
