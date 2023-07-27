@@ -11,6 +11,7 @@ function MultipleInput() {
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   function clearForm() {
     setError('');
@@ -87,12 +88,22 @@ function MultipleInput() {
         />
 
         <input
-          type="password"
+          type={showPassword ? 'text' : 'password'}
           placeholder='Digite a sua senha'
           name='password'
           value={form.password}
           onChange={(event) => handleChangeForm(event)}
         />
+
+        <div>
+          <input
+            type="checkbox"
+            name='show-password'
+            checked={showPassword}
+            onChange={() => setShowPassword(!showPassword)}
+          />
+          <label htmlFor="show-password">Mostrar senha</label>
+        </div>
 
         {error && <span className='error'>{error}</span>}
 
