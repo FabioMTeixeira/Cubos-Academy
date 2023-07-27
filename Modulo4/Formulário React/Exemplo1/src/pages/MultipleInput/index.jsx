@@ -1,21 +1,26 @@
 import { useState } from 'react';
 import './style.css';
 
-function Main() {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState(0);
-  const [adress, setAdress] = useState('');
-  const [password, setPassword] = useState('');
+function MultipleInput() {
+  const [form, setForm] = useState({
+    name: '',
+    age: 0,
+    address: '',
+    password: ''
+  });
+
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
   function clearForm() {
     setError('');
     setSuccess('');
-    setAge('');
-    setPassword('');
-    setName('');
-    setAdress('');
+    setForm({
+      name: '',
+      age: 0,
+      address: '',
+      password: ''
+    });
   }
 
   function handleSubmit(event) {
@@ -24,27 +29,33 @@ function Main() {
     setError('');
     setSuccess('');
 
-    if (!name) {
+    if (!form.name) {
       setError('Nome Obrigatório...');
       return;
     }
 
-    if (age < 18) {
+    if (form.age < 18) {
       setError('Deve ser maior de idade');
       return;
     }
 
-    if (!adress) {
+    if (!form.adress) {
       setError('Endereço Obrigatório...');
       return;
     }
 
-    if (password.length < 8) {
+    if (form.password.length < 8) {
       setError('Senha precisa ter 8 caracter');
       return;
     }
 
     setSuccess('Cadastro efetuado com sucesso');
+  }
+
+  function handleChangeForm(event) {
+    const value = event.target.value;
+
+    setForm({ ...form, [event.target.name]: value });
   }
 
   return (
@@ -54,29 +65,33 @@ function Main() {
         <input
           type="text"
           placeholder='Digite seu nome'
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+          name='name'
+          value={form.name}
+          onChange={(event) => handleChangeForm(event)}
         />
 
         <input
           type="number"
           placeholder='Digite sua idade'
-          value={age}
-          onChange={(event) => setAge(event.target.valueAsNumber)}
+          name='age'
+          value={form.age}
+          onChange={(event) => handleChangeForm(event)}
         />
 
         <input
           type="text"
           placeholder='Digite seu endereço'
-          value={adress}
-          onChange={(event) => setAdress(event.target.value)}
+          name='address'
+          value={form.address}
+          onChange={(event) => handleChangeForm(event)}
         />
 
         <input
           type="password"
           placeholder='Digite a sua senha'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          name='password'
+          value={form.password}
+          onChange={(event) => handleChangeForm(event)}
         />
 
         {error && <span className='error'>{error}</span>}
@@ -94,4 +109,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MultipleInput;
