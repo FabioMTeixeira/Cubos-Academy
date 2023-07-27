@@ -12,6 +12,7 @@ function MultipleInput() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
 
   function clearForm() {
     setError('');
@@ -103,6 +104,26 @@ function MultipleInput() {
             onChange={() => setShowPassword(!showPassword)}
           />
           <label htmlFor="show-password">Mostrar senha</label>
+        </div>
+
+        <strong>Qual periodo vc deseja estudar?</strong>
+        <div>
+          <input
+            type="radio"
+            name='morning'
+            value='morning'
+            checked={selectedOption === 'morning'}
+            onChange={() => setSelectedOption('morning')}
+          />
+          <label htmlFor="morning">Manhã</label>
+          <input
+            type="radio"
+            name='night'
+            value='night'
+            checked={selectedOption === 'night'}
+            onChange={() => setSelectedOption('night')}
+          />
+          <label htmlFor="night">Noite</label>
         </div>
 
         {error && <span className='error'>{error}</span>}
