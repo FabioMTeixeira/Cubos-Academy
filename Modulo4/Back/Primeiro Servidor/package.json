@@ -1,19 +1,16 @@
 {
   "name": "primeiro-servidor",
-  "version": "0.0.1",
-  "description": "Aula de primeiro servidor",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "node",
-    "javascript",
-    "npm"
-  ],
-  "author": "Fabio Matos",
-  "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
