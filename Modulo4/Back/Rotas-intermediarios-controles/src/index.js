@@ -21,7 +21,16 @@ const professores = [
 ];
 
 app.get('/professores', (req, res) => {
-    res.send(professores);
+    let resultado = professores;
+    const { nome } = req.query;
+
+    if (nome) {
+        resultado = professores.filter((professor) => {
+            return professor.nome === nome;
+        });
+    }
+
+    res.send(resultado);
 });
 
 app.get('/professores/:id', (req, res) => {
