@@ -3,7 +3,17 @@ const { filtrarProfessores, encontrarUmProfessor } = require('./controllers/prof
 
 const app = express();
 
-app.get('/professores', filtrarProfessores);
+const intermediarioDaRota = () => {
+    console.log('passei pelo middleware da rota');
+    next();
+};
+
+app.use((req, res, next) => {
+    console.log('passei no 1 intermediario');
+    next();
+});
+
+app.get('/professores', intermediarioDaRota, filtrarProfessores);
 
 app.get('/professores/:id', encontrarUmProfessor);
 
