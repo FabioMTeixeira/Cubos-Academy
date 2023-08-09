@@ -1,9 +1,8 @@
 const express = require('express');
+const { listagem } = require('./controllers/instrutores');
 
 const router = express();
 
-router.get('/', (req, res) => {
-    res.send('tudo ok');
-});
+router.get('/instrutores', listagem);
 
 module.exports = router;
