@@ -1,4 +1,5 @@
 const { instrutores } = require('../bancoDeDados');
+let { identificadorInstrutor } = require('../bancoDeDados');
 
 const listagem = (req, res) => {
     return res.json(instrutores);
@@ -18,7 +19,31 @@ const obterInstrutor = (req, res) => {
     return res.status(200).json(encontrarInstrutor);
 };
 
+const cadastraInstrutor = (req, res) => {
+    const { nome, email, status } = req.body;
+
+    if (!nome) {
+        return res.status(400).json({ mensagem: 'o nome é obrigatório' });
+    }
+
+    if (!email) {
+        return res.status(400).json({ mensagem: 'o email é obrigatório' });
+    }
+
+    const instrutor = {
+        id: identificadorInstrutor++,
+        nome,
+        email,
+        status: status ?? true
+    };
+
+    instrutores.push(instrutor);
+
+    return res.status(201).json(instrutor);
+};
+
 module.exports = {
     listagem,
-    obterInstrutor
+    obterInstrutor,
+    cadastraInstrutor
 };
