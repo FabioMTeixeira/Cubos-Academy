@@ -30,7 +30,7 @@ app.get('/:id', async (req, res) => {
     };
 });
 
-app.get('/999', async (req, res) => {
+app.get('/', async (req, res) => {
     const { pagina, porPagina } = req.query;
     try {
 
